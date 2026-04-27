@@ -1,1 +1,666 @@
-New
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Thinking Shapes Lab</title>
+		<meta
+			name="description"
+			content="Thinking Shapes Lab explores how form becomes thought through computational design, geometric intelligence, and creative AI."
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			:root {
+				--bg: #f0f0f0;
+				--paper: #ffffff;
+				--ink: #111111;
+				--muted: #555555;
+				--line: #d8d8d8;
+				--brand: #14427a;
+				--brand-soft: #dce8f5;
+				--max: 1180px;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			body {
+				font-family: "Inter", system-ui, sans-serif;
+				color: var(--ink);
+				background: var(--bg);
+				line-height: 1.55;
+			}
+
+			a {
+				color: inherit;
+			}
+
+			.container {
+				max-width: var(--max);
+				margin: 0 auto;
+				padding: 0 1.4rem;
+			}
+
+			.topband {
+				border-bottom: 1px solid var(--line);
+				background: var(--paper);
+				position: sticky;
+				top: 0;
+				z-index: 10;
+			}
+
+			.topband-inner {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				gap: 1rem;
+				min-height: 60px;
+			}
+
+			.mark {
+				display: flex;
+				align-items: baseline;
+				gap: 0.7rem;
+			}
+
+			.mark .lab {
+				font-family: "Inter", system-ui, sans-serif;
+				font-size: 1.05rem;
+				font-weight: 800;
+				letter-spacing: -0.02em;
+			}
+
+			.mark .uni {
+				font-size: 0.74rem;
+				text-transform: uppercase;
+				letter-spacing: 0.09em;
+				color: var(--muted);
+			}
+
+			nav {
+				display: flex;
+				gap: 1.1rem;
+				flex-wrap: wrap;
+				justify-content: flex-end;
+			}
+
+			nav a {
+				text-decoration: none;
+				font-size: 0.9rem;
+				color: var(--muted);
+				transition: color 0.15s ease;
+			}
+
+			nav a:hover,
+			nav a:focus-visible {
+				color: var(--brand);
+			}
+
+			.hero {
+				padding: 3.5rem 0 2rem;
+			}
+
+			.hero-grid {
+				display: grid;
+				grid-template-columns: 1.15fr 0.85fr;
+				gap: 1.2rem;
+				align-items: stretch;
+			}
+
+			.hero-main,
+			.hero-side {
+				border: 1px solid var(--line);
+				border-radius: 3px;
+				background: var(--paper);
+			}
+
+			.hero-main {
+				padding: 2.2rem;
+			}
+
+			.kicker {
+				margin: 0 0 0.6rem;
+				font-size: 0.72rem;
+				text-transform: uppercase;
+				letter-spacing: 0.12em;
+				color: var(--brand);
+				font-weight: 600;
+			}
+
+			h1,
+			h2,
+			h3 {
+				font-family: "Inter", system-ui, sans-serif;
+				line-height: 1.1;
+				margin-top: 0;
+			}
+
+			h1 {
+				margin: 0 0 1rem;
+				font-size: clamp(1.9rem, 4vw, 3.2rem);
+				max-width: 18ch;
+				letter-spacing: -0.03em;
+				font-weight: 800;
+			}
+
+			.lead {
+				max-width: 60ch;
+				color: var(--muted);
+				margin-bottom: 1.6rem;
+				font-size: 1rem;
+			}
+
+			.cta-row {
+				display: flex;
+				gap: 0.7rem;
+				flex-wrap: wrap;
+			}
+
+			.btn {
+				display: inline-block;
+				text-decoration: none;
+				font-weight: 600;
+				font-size: 0.88rem;
+				padding: 0.55rem 0.85rem;
+				border-radius: 3px;
+				border: 1px solid var(--ink);
+				transition: background-color 0.15s ease, color 0.15s ease;
+			}
+
+			.btn.primary {
+				background: var(--ink);
+				color: #fff;
+			}
+
+			.btn.primary:hover,
+			.btn.primary:focus-visible {
+				background: var(--brand);
+				border-color: var(--brand);
+			}
+
+			.btn.secondary {
+				background: transparent;
+				color: var(--ink);
+			}
+
+			.btn.secondary:hover,
+			.btn.secondary:focus-visible {
+				background: var(--ink);
+				color: #fff;
+			}
+
+			.hero-side {
+				padding: 1rem;
+				display: grid;
+				gap: 0.6rem;
+			}
+
+			.area {
+				padding: 0.85rem;
+				border-radius: 2px;
+				border: 1px solid var(--line);
+				background: var(--bg);
+			}
+
+			.area .label {
+				font-size: 0.68rem;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				color: var(--muted);
+				font-weight: 600;
+				margin: 0 0 0.25rem;
+			}
+
+			.area h3 {
+				font-size: 0.98rem;
+				margin: 0 0 0.3rem;
+			}
+
+			.area p {
+				margin: 0;
+				color: var(--muted);
+				font-size: 0.88rem;
+			}
+
+			main {
+				padding-bottom: 4rem;
+			}
+
+			.section {
+				margin-top: 1.8rem;
+				padding: 1.4rem;
+				border: 1px solid var(--line);
+				border-radius: 3px;
+				background: var(--paper);
+			}
+
+			.section h2 {
+				font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+				margin-bottom: 1rem;
+				padding-bottom: 0.6rem;
+				border-bottom: 1px solid var(--line);
+			}
+
+			.grid-2 {
+				display: grid;
+				grid-template-columns: repeat(2, minmax(0, 1fr));
+				gap: 1rem;
+			}
+
+			.person,
+			.pub,
+			.contact-card,
+			.talk {
+				background: var(--bg);
+				border: 1px solid var(--line);
+				border-radius: 2px;
+			}
+
+			.person {
+				padding: 1.1rem;
+			}
+
+			.person .role {
+				font-size: 0.7rem;
+				letter-spacing: 0.1em;
+				text-transform: uppercase;
+				color: var(--brand);
+				font-weight: 600;
+				margin: 0 0 0.3rem;
+			}
+
+			.person h3 {
+				margin: 0 0 0.5rem;
+				font-size: 1.2rem;
+			}
+
+			.person p {
+				margin: 0;
+				color: var(--muted);
+				font-size: 0.93rem;
+			}
+
+			.research-grid {
+				display: grid;
+				grid-template-columns: repeat(3, minmax(0, 1fr));
+				gap: 0.75rem;
+			}
+
+			.research-tile {
+				padding: 1rem;
+				border-radius: 2px;
+				border: 1px solid var(--line);
+				background: var(--bg);
+			}
+
+			.research-tile h3 {
+				font-size: 0.98rem;
+				margin-bottom: 0.4rem;
+			}
+
+			.research-tile p {
+				margin: 0;
+				color: var(--muted);
+				font-size: 0.88rem;
+			}
+
+			.talks-list {
+				display: grid;
+				gap: 0;
+			}
+
+			.talk {
+				padding: 0.85rem 0.95rem;
+				display: grid;
+				grid-template-columns: 130px 1fr;
+				gap: 1rem;
+				align-items: start;
+				border-radius: 0;
+				border-left: none;
+				border-right: none;
+				border-top: none;
+			}
+
+			.talk:last-child {
+				border-bottom: none;
+			}
+
+			.talk time {
+				font-size: 0.82rem;
+				font-weight: 500;
+				color: var(--muted);
+				padding-top: 3px;
+			}
+
+			.talk h3 {
+				font-size: 0.98rem;
+				margin: 0 0 0.2rem;
+				font-weight: 600;
+			}
+
+			.talk p {
+				margin: 0;
+				color: var(--muted);
+				font-size: 0.88rem;
+			}
+
+			.pub-grid {
+				display: grid;
+				gap: 0;
+			}
+
+			.pub {
+				padding: 0.75rem 0.9rem;
+				border-radius: 0;
+				border-left: none;
+				border-right: none;
+				border-top: none;
+			}
+
+			.pub:last-child {
+				border-bottom: none;
+			}
+
+			.pub p {
+				margin: 0.15rem 0 0;
+				color: var(--muted);
+				font-size: 0.88rem;
+			}
+
+			.contact-wrap {
+				display: grid;
+				grid-template-columns: 1.1fr 0.9fr;
+				gap: 1rem;
+			}
+
+			.contact-card {
+				padding: 1.1rem;
+			}
+
+			.contact-card p {
+				margin: 0;
+				color: var(--muted);
+				font-size: 0.93rem;
+			}
+
+			.contact-card strong {
+				color: var(--ink);
+			}
+
+			.news-list {
+				margin: 0.5rem 0 0;
+				padding-left: 1.1rem;
+			}
+
+			.news-list li {
+				margin-bottom: 0.4rem;
+				color: var(--muted);
+				font-size: 0.92rem;
+			}
+
+			footer {
+				margin-top: 2rem;
+				padding: 1.2rem 0 2.8rem;
+				font-size: 0.86rem;
+				color: var(--muted);
+				border-top: 1px solid var(--line);
+			}
+
+			@media (max-width: 980px) {
+				.hero-grid,
+				.contact-wrap {
+					grid-template-columns: 1fr;
+				}
+
+				.research-grid {
+					grid-template-columns: 1fr 1fr;
+				}
+
+				.talk {
+					grid-template-columns: 1fr;
+				}
+			}
+
+			@media (max-width: 680px) {
+				.topband-inner {
+					padding: 0.6rem 0;
+					align-items: flex-start;
+					flex-direction: column;
+				}
+
+				.research-grid,
+				.grid-2 {
+					grid-template-columns: 1fr;
+				}
+
+				.hero {
+					padding-top: 2rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="topband">
+			<div class="container topband-inner">
+				<div class="mark">
+					<span class="lab">Thinking Shapes Lab</span>
+								<span class="uni">Università della Svizzera italiana</span>
+				</div>
+				<nav aria-label="Primary">
+					<a href="#about">About</a>
+					<a href="#research">Research</a>
+					<a href="#talks">Talks</a>
+					<a href="#people">People</a>
+					<a href="#publications">Publications</a>
+					<a href="#contact">Contact</a>
+				</nav>
+			</div>
+		</div>
+
+		<header class="hero" id="about">
+			<div class="container hero-grid">
+				<section class="hero-main">
+					<p class="kicker">Mission</p>
+					<h1>Modeling Thought Through Shape</h1>
+					<p class="lead">
+						Thinking Shapes Lab explores how geometric structures become cognitive structures.
+						Our work connects computational design, machine intelligence, and visual reasoning
+						to build systems that understand and generate meaningful form.
+					</p>
+					<div class="cta-row">
+						<a class="btn primary" href="#talks">Recent Talks</a>
+						<a class="btn secondary" href="#publications">Selected Publications</a>
+					</div>
+				</section>
+				<aside class="hero-side" aria-label="Research highlights">
+					<article class="area">
+						<p class="label">Theme 01</p>
+						<h3>Shape Cognition</h3>
+						<p>Reasoning over abstract, semantic, and spatial structure.</p>
+					</article>
+					<article class="area">
+						<p class="label">Theme 02</p>
+						<h3>Generative Form Systems</h3>
+						<p>Learning and designing rules for coherent form synthesis.</p>
+					</article>
+					<article class="area">
+						<p class="label">Theme 03</p>
+						<h3>Embodied Geometry</h3>
+						<p>Connecting simulation, materiality, and interaction.</p>
+					</article>
+				</aside>
+			</div>
+		</header>
+
+		<main class="container">
+			<section class="section" id="research">
+				<h2>Research Directions</h2>
+				<div class="research-grid">
+					<article class="research-tile">
+						<h3>3D Instance &amp; Semantic Segmentation</h3>
+						<p>Class-agnostic and open-vocabulary segmentation of point clouds and 3D scenes at scale.</p>
+					</article>
+					<article class="research-tile">
+						<h3>Superquadric Scene Decomposition</h3>
+						<p>Compact, interpretable 3D scene representations using superquadric geometric primitives.</p>
+					</article>
+					<article class="research-tile">
+						<h3>Functional 3D Understanding</h3>
+						<p>Affordance and functionality reasoning in indoor environments for robotic interaction.</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="section" id="talks">
+				<h2>Talks</h2>
+				<div class="talks-list" aria-label="Chronological talks list">
+					<article class="talk">
+						<time datetime="2026-04-01">Apr 2026</time>
+						<div>
+							<h3>Superquadrics as a World Representation</h3>
+							<p>ZurichAI — covering SuperDec, SuperFlex, and SpaceControl.</p>
+						</div>
+					</article>
+					<article class="talk">
+						<time datetime="2024-03-01">Mar 2024</time>
+						<div>
+							<h3>3D Scene Understanding for Architecture and Engineering</h3>
+							<p>CV4AEC Workshop, CVPR 2024, Seattle.</p>
+						</div>
+					</article>
+					<article class="talk">
+						<time datetime="2024-01-01">Jan 2024</time>
+						<div>
+							<h3>High-Fidelity Open-Vocabulary 3D Scene Understanding</h3>
+							<p>Mila Robot Learning Seminar.</p>
+						</div>
+					</article>
+					<article class="talk">
+						<time datetime="2023-09-01">Sep 2023</time>
+						<div>
+							<h3>Keynote: Open-Vocabulary 3D Scene Understanding</h3>
+							<p>ICCV 2023 CVAAD Workshop, Paris.</p>
+						</div>
+					</article>
+					<article class="talk">
+						<time datetime="2022-06-01">Jun 2022</time>
+						<div>
+							<h3>Invited Talk: 3D Instance Segmentation</h3>
+							<p>CVPR 2022 ScanNet Workshop, New Orleans.</p>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section class="section" id="people">
+				<h2>People</h2>
+				<div class="grid-2">
+					<article class="person">
+						<p class="role">Assistant Professor</p>
+						<h3>Francis Engelmann</h3>
+						<p>
+							Francis is an assistant professor at USI (Università della Svizzera italiana).
+							Previously he was a postdoc at Stanford University with Leonidas Guibas and
+							Jeannette Bohg, a visiting researcher at Google Zurich, and a postdoctoral
+							fellow at ETH Zurich. He obtained his PhD at RWTH Aachen University.
+						</p>
+					</article>
+					<article class="person">
+						<p class="role">PhD Student</p>
+						<h3>Nicolai Hermann</h3>
+					</article>
+					<article class="person">
+						<p class="role">Academic Guest</p>
+						<h3>Filippo Ziliotto</h3>
+						<p>
+							PhD Student, BMCS (CS), FBK Scholarship
+						</p>
+						<p style="margin-top: 0.45rem;">
+							<strong>Co-advisor:</strong> L. Serafini
+						</p>
+						<p style="margin-top: 0.45rem;">
+							filippo.ziliotto [at] phd.unipd.it
+						</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="section" id="publications">
+				<h2>Selected Publications</h2>
+				<div class="pub-grid">
+					<article class="pub">
+						<strong>Reconstructing Functional 3D Scenes from Egocentric Interaction Videos (FunRec)</strong>
+						<p>Delitzas, Zhang, Gavryushin, Di Mario, Sun, Dabral, Guibas, Theobalt, Pollefeys, Engelmann, Baráth — <em>CVPR 2026</em></p>
+					</article>
+					<article class="pub">
+						<strong>SpaceControl: Introducing Test-Time Spatial Control to 3D Generative Modeling</strong>
+						<p>Fedele*, Engelmann*, Huang, Litany, Pollefeys, Guibas — <em>ICLR 2026</em></p>
+					</article>
+					<article class="pub">
+						<strong>SuperDec: 3D Scene Decomposition with Superquadric Primitives</strong>
+						<p>Fedele, Sun, Guibas, Pollefeys, Engelmann — <em>ICCV 2025</em> &nbsp;<strong>Oral</strong> (top 2.3%)</p>
+					</article>
+					<article class="pub">
+						<strong>OpenFunGraph: Open-Vocabulary Functional 3D Scene Graphs</strong>
+						<p>Zhang*, Delitzas*, Wang, Zhang, Ji, Pollefeys, Engelmann — <em>CVPR 2025</em> &nbsp;<strong>Highlight</strong> (top 13%)</p>
+					</article>
+					<article class="pub">
+						<strong><a href="https://scenefun3d.github.io/" target="_blank" rel="noopener noreferrer">SceneFun3D: Fine-Grained Functionality and Affordance Understanding in 3D Scenes</a></strong>
+						<p>Delitzas, Takmaz, Tombari, Sumner, Pollefeys, Engelmann — <em>CVPR 2024</em> &nbsp;<strong>Oral</strong> (top 3.3%)</p>
+					</article>
+					<article class="pub">
+						<strong><a href="https://openmask3d.github.io/" target="_blank" rel="noopener noreferrer">OpenMask3D: Open-Vocabulary 3D Instance Segmentation</a></strong>
+						<p>Takmaz, Fedele, Sumner, Pollefeys, Tombari, Engelmann — <em>NeurIPS 2023</em></p>
+					</article>
+					<article class="pub">
+						<strong><a href="https://jonasschult.github.io/Mask3D/" target="_blank" rel="noopener noreferrer">Mask3D: Mask Transformer for 3D Semantic Instance Segmentation</a></strong>
+						<p>Schult, Engelmann, Hermans, Litany, Tang, Leibe — <em>ICRA 2023</em> &nbsp;<strong>1st Place</strong> ScanNet Challenge</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="section" id="contact">
+				<h2>Contact</h2>
+				<div class="contact-wrap">
+					<article class="contact-card">
+						<p>
+							<strong>Thinking Shapes Lab</strong><br />
+							Faculty of Informatics<br />
+							Università della Svizzera italiana (USI)<br />
+							Lugano, Switzerland
+						</p>
+						<p style="margin-top: 0.8rem;">
+							<a href="https://www.thinkingshapeslab.org">thinkingshapeslab.org</a>
+						</p>
+					</article>
+					<article class="contact-card">
+						<p><strong>Recent News</strong></p>
+						<ul class="news-list">
+							<li>Apr 2026 — Talk at ZurichAI on superquadrics as a world representation.</li>
+							<li>Feb 2026 — FunRec accepted at CVPR 2026.</li>
+							<li>Feb 2026 — Area chair for ECCV 2026.</li>
+							<li>Jan 2026 — Two papers accepted at ICLR 2026.</li>
+							<li>Jun 2025 — SuperDec: Oral at ICCV 2025 (top 2.3%).</li>
+						</ul>
+					</article>
+				</div>
+			</section>
+
+			<footer>
+				Thinking Shapes Lab • Updated April 2026
+			</footer>
+		</main>
+	</body>
+</html>
