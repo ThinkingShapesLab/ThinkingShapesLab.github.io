@@ -409,10 +409,38 @@
 			}
 
 			@media (max-width: 680px) {
+				.container {
+					padding: 0 0.95rem;
+				}
+
 				.topband-inner {
 					padding: 0.6rem 0;
 					align-items: flex-start;
 					flex-direction: column;
+				}
+
+				.mark {
+					flex-wrap: wrap;
+					gap: 0.35rem 0.6rem;
+				}
+
+				.mark .lab {
+					font-size: 1rem;
+				}
+
+				.mark .uni {
+					font-size: 0.68rem;
+					letter-spacing: 0.07em;
+				}
+
+				nav {
+					width: 100%;
+					justify-content: flex-start;
+					gap: 0.55rem 0.9rem;
+				}
+
+				nav a {
+					padding: 0.15rem 0;
 				}
 
 				.research-grid,
@@ -422,6 +450,32 @@
 
 				.hero {
 					padding-top: 2rem;
+				}
+
+				.hero-main,
+				.section,
+				.contact-card,
+				.person,
+				.research-tile {
+					padding: 1rem;
+				}
+
+				h1 {
+					font-size: clamp(1.55rem, 9vw, 2.1rem);
+				}
+
+				.lead {
+					font-size: 0.95rem;
+				}
+
+				.talk {
+					grid-template-columns: 104px 1fr;
+					gap: 0.65rem;
+					align-items: start;
+				}
+
+				.talk time {
+					padding-top: 0.2rem;
 				}
 			}
 		</style>
