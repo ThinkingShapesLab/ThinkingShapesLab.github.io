@@ -114,19 +114,15 @@
 
 			.hero-grid {
 				display: grid;
-				grid-template-columns: 1.15fr 0.85fr;
+				grid-template-columns: 1fr;
 				gap: 1.2rem;
 				align-items: stretch;
 			}
 
-			.hero-main,
-			.hero-side {
+			.hero-main {
 				border: 1px solid var(--line);
 				border-radius: 3px;
 				background: var(--paper);
-			}
-
-			.hero-main {
 				padding: 2.2rem;
 			}
 
@@ -199,39 +195,6 @@
 			.btn.secondary:focus-visible {
 				background: var(--ink);
 				color: #fff;
-			}
-
-			.hero-side {
-				padding: 1rem;
-				display: grid;
-				gap: 0.6rem;
-			}
-
-			.area {
-				padding: 0.85rem;
-				border-radius: 2px;
-				border: 1px solid var(--line);
-				background: var(--bg);
-			}
-
-			.area .label {
-				font-size: 0.68rem;
-				text-transform: uppercase;
-				letter-spacing: 0.1em;
-				color: var(--muted);
-				font-weight: 600;
-				margin: 0 0 0.25rem;
-			}
-
-			.area h3 {
-				font-size: 0.98rem;
-				margin: 0 0 0.3rem;
-			}
-
-			.area p {
-				margin: 0;
-				color: var(--muted);
-				font-size: 0.88rem;
 			}
 
 			main {
@@ -461,9 +424,10 @@
 				<nav aria-label="Primary">
 					<a href="#about">About</a>
 					<a href="#research">Research</a>
-					<a href="#talks">Talks</a>
-					<a href="#people">People</a>
 					<a href="#publications">Publications</a>
+					<a href="#people">People</a>
+					<a href="#teaching">Teaching</a>
+					<a href="#talks">Talks</a>
 					<a href="#contact">Contact</a>
 				</nav>
 			</div>
@@ -480,27 +444,10 @@
 						to build systems that understand and generate meaningful form.
 					</p>
 					<div class="cta-row">
-						<a class="btn primary" href="#talks">Recent Talks</a>
-						<a class="btn secondary" href="#publications">Selected Publications</a>
+						<a class="btn primary" href="#publications">Selected Publications</a>
+						<a class="btn secondary" href="#talks">Recent Talks</a>
 					</div>
 				</section>
-				<aside class="hero-side" aria-label="Research highlights">
-					<article class="area">
-						<p class="label">Theme 01</p>
-						<h3>Shape Cognition</h3>
-						<p>Reasoning over abstract, semantic, and spatial structure.</p>
-					</article>
-					<article class="area">
-						<p class="label">Theme 02</p>
-						<h3>Generative Form Systems</h3>
-						<p>Learning and designing rules for coherent form synthesis.</p>
-					</article>
-					<article class="area">
-						<p class="label">Theme 03</p>
-						<h3>Embodied Geometry</h3>
-						<p>Connecting simulation, materiality, and interaction.</p>
-					</article>
-				</aside>
 			</div>
 		</header>
 
@@ -519,6 +466,84 @@
 					<article class="research-tile">
 						<h3>Functional 3D Understanding</h3>
 						<p>Affordance and functionality reasoning in indoor environments for robotic interaction.</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="section" id="publications">
+				<h2>Selected Publications</h2>
+				<div class="pub-grid">
+					<article class="pub">
+						<strong>Reconstructing Functional 3D Scenes from Egocentric Interaction Videos (FunRec)</strong>
+						<p>Delitzas, Zhang, Gavryushin, Di Mario, Sun, Dabral, Guibas, Theobalt, Pollefeys, Engelmann, Baráth — <em>CVPR 2026</em></p>
+					</article>
+					<article class="pub">
+						<strong>SpaceControl: Introducing Test-Time Spatial Control to 3D Generative Modeling</strong>
+						<p>Fedele*, Engelmann*, Huang, Litany, Pollefeys, Guibas — <em>ICLR 2026</em></p>
+					</article>
+					<article class="pub">
+						<strong>SuperDec: 3D Scene Decomposition with Superquadric Primitives</strong>
+						<p>Fedele, Sun, Guibas, Pollefeys, Engelmann — <em>ICCV 2025</em> &nbsp;<strong>Oral</strong> (top 2.3%)</p>
+					</article>
+					<article class="pub">
+						<strong>OpenFunGraph: Open-Vocabulary Functional 3D Scene Graphs</strong>
+						<p>Zhang*, Delitzas*, Wang, Zhang, Ji, Pollefeys, Engelmann — <em>CVPR 2025</em> &nbsp;<strong>Highlight</strong> (top 13%)</p>
+					</article>
+					<article class="pub">
+						<strong><a href="https://scenefun3d.github.io/" target="_blank" rel="noopener noreferrer">SceneFun3D: Fine-Grained Functionality and Affordance Understanding in 3D Scenes</a></strong>
+						<p>Delitzas, Takmaz, Tombari, Sumner, Pollefeys, Engelmann — <em>CVPR 2024</em> &nbsp;<strong>Oral</strong> (top 3.3%)</p>
+					</article>
+					<article class="pub">
+						<strong><a href="https://openmask3d.github.io/" target="_blank" rel="noopener noreferrer">OpenMask3D: Open-Vocabulary 3D Instance Segmentation</a></strong>
+						<p>Takmaz, Fedele, Sumner, Pollefeys, Tombari, Engelmann — <em>NeurIPS 2023</em></p>
+					</article>
+					<article class="pub">
+						<strong><a href="https://jonasschult.github.io/Mask3D/" target="_blank" rel="noopener noreferrer">Mask3D: Mask Transformer for 3D Semantic Instance Segmentation</a></strong>
+						<p>Schult, Engelmann, Hermans, Litany, Tang, Leibe — <em>ICRA 2023</em> &nbsp;<strong>1st Place</strong> ScanNet Challenge</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="section" id="people">
+				<h2>People</h2>
+				<div class="grid-2">
+					<article class="person">
+						<p class="role">Assistant Professor</p>
+						<h3><a href="https://francisengelmann.github.io/" target="_blank" rel="noopener noreferrer">Francis Engelmann</a></h3>
+					</article>
+					<article class="person">
+						<p class="role">PhD Student</p>
+						<h3><a href="https://nihermann.github.io/" target="_blank" rel="noopener noreferrer">Nicolai Hermann</a></h3>
+					</article>
+					<article class="person">
+						<p class="role">Academic Guest</p>
+						<h3><a href="https://scholar.google.co.jp/citations?user=LaioU1YAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Filippo Ziliotto</a></h3>
+					</article>
+					<article class="person">
+						<p class="role">Collaborator • PhD Student at ETH</p>
+						<h3><a href="https://elisabettafedele.github.io/" target="_blank" rel="noopener noreferrer">Elisabetta Fedele</a></h3>
+					</article>
+					<article class="person">
+						<p class="role">Collaborator • PhD Student at ETH</p>
+						<h3><a href="https://alexdelitzas.github.io/" target="_blank" rel="noopener noreferrer">Alexandros Delitzas</a></h3>
+					</article>
+				</div>
+			</section>
+
+			<section class="section" id="teaching">
+				<h2>Teaching</h2>
+				<div class="talks-list" aria-label="Teaching courses list">
+					<article class="talk">
+						<time datetime="2026-03-01">Spring 2026</time>
+						<div>
+							<h3>Computer Vision</h3>
+						</div>
+					</article>
+					<article class="talk">
+						<time datetime="2026-09-01">Fall 2026</time>
+						<div>
+							<h3>Generative AI</h3>
+						</div>
 					</article>
 				</div>
 			</section>
@@ -564,102 +589,26 @@
 				</div>
 			</section>
 
-			<section class="section" id="people">
-				<h2>People</h2>
-				<div class="grid-2">
-					<article class="person">
-						<p class="role">Assistant Professor</p>
-						<h3>Francis Engelmann</h3>
-						<p>
-							Francis is an assistant professor at USI (Università della Svizzera italiana).
-							Previously he was a postdoc at Stanford University with Leonidas Guibas and
-							Jeannette Bohg, a visiting researcher at Google Zurich, and a postdoctoral
-							fellow at ETH Zurich. He obtained his PhD at RWTH Aachen University.
-						</p>
-					</article>
-					<article class="person">
-						<p class="role">PhD Student</p>
-						<h3>Nicolai Hermann</h3>
-					</article>
-					<article class="person">
-						<p class="role">Academic Guest</p>
-						<h3>Filippo Ziliotto</h3>
-						<p>
-							PhD Student, BMCS (CS), FBK Scholarship
-						</p>
-						<p style="margin-top: 0.45rem;">
-							<strong>Co-advisor:</strong> L. Serafini
-						</p>
-						<p style="margin-top: 0.45rem;">
-							filippo.ziliotto [at] phd.unipd.it
-						</p>
-					</article>
-				</div>
-			</section>
-
-			<section class="section" id="publications">
-				<h2>Selected Publications</h2>
-				<div class="pub-grid">
-					<article class="pub">
-						<strong>Reconstructing Functional 3D Scenes from Egocentric Interaction Videos (FunRec)</strong>
-						<p>Delitzas, Zhang, Gavryushin, Di Mario, Sun, Dabral, Guibas, Theobalt, Pollefeys, Engelmann, Baráth — <em>CVPR 2026</em></p>
-					</article>
-					<article class="pub">
-						<strong>SpaceControl: Introducing Test-Time Spatial Control to 3D Generative Modeling</strong>
-						<p>Fedele*, Engelmann*, Huang, Litany, Pollefeys, Guibas — <em>ICLR 2026</em></p>
-					</article>
-					<article class="pub">
-						<strong>SuperDec: 3D Scene Decomposition with Superquadric Primitives</strong>
-						<p>Fedele, Sun, Guibas, Pollefeys, Engelmann — <em>ICCV 2025</em> &nbsp;<strong>Oral</strong> (top 2.3%)</p>
-					</article>
-					<article class="pub">
-						<strong>OpenFunGraph: Open-Vocabulary Functional 3D Scene Graphs</strong>
-						<p>Zhang*, Delitzas*, Wang, Zhang, Ji, Pollefeys, Engelmann — <em>CVPR 2025</em> &nbsp;<strong>Highlight</strong> (top 13%)</p>
-					</article>
-					<article class="pub">
-						<strong><a href="https://scenefun3d.github.io/" target="_blank" rel="noopener noreferrer">SceneFun3D: Fine-Grained Functionality and Affordance Understanding in 3D Scenes</a></strong>
-						<p>Delitzas, Takmaz, Tombari, Sumner, Pollefeys, Engelmann — <em>CVPR 2024</em> &nbsp;<strong>Oral</strong> (top 3.3%)</p>
-					</article>
-					<article class="pub">
-						<strong><a href="https://openmask3d.github.io/" target="_blank" rel="noopener noreferrer">OpenMask3D: Open-Vocabulary 3D Instance Segmentation</a></strong>
-						<p>Takmaz, Fedele, Sumner, Pollefeys, Tombari, Engelmann — <em>NeurIPS 2023</em></p>
-					</article>
-					<article class="pub">
-						<strong><a href="https://jonasschult.github.io/Mask3D/" target="_blank" rel="noopener noreferrer">Mask3D: Mask Transformer for 3D Semantic Instance Segmentation</a></strong>
-						<p>Schult, Engelmann, Hermans, Litany, Tang, Leibe — <em>ICRA 2023</em> &nbsp;<strong>1st Place</strong> ScanNet Challenge</p>
-					</article>
-				</div>
-			</section>
-
 			<section class="section" id="contact">
 				<h2>Contact</h2>
 				<div class="contact-wrap">
 					<article class="contact-card">
 						<p>
 							<strong>Thinking Shapes Lab</strong><br />
+							Francis Engelmann<br />
 							Faculty of Informatics<br />
 							Università della Svizzera italiana (USI)<br />
 							Lugano, Switzerland
 						</p>
 						<p style="margin-top: 0.8rem;">
-							<a href="https://www.thinkingshapeslab.org">thinkingshapeslab.org</a>
+							<a href="https://www.thinkingshapeslab.org">www.thinkingshapeslab.org</a>
 						</p>
-					</article>
-					<article class="contact-card">
-						<p><strong>Recent News</strong></p>
-						<ul class="news-list">
-							<li>Apr 2026 — Talk at ZurichAI on superquadrics as a world representation.</li>
-							<li>Feb 2026 — FunRec accepted at CVPR 2026.</li>
-							<li>Feb 2026 — Area chair for ECCV 2026.</li>
-							<li>Jan 2026 — Two papers accepted at ICLR 2026.</li>
-							<li>Jun 2025 — SuperDec: Oral at ICCV 2025 (top 2.3%).</li>
-						</ul>
 					</article>
 				</div>
 			</section>
 
 			<footer>
-				Thinking Shapes Lab • Updated April 2026
+				Thinking Shapes Lab (TSL)
 			</footer>
 		</main>
 	</body>
