@@ -146,7 +146,7 @@
 			h1 {
 				margin: 0 0 1rem;
 				font-size: clamp(1.9rem, 4vw, 3.2rem);
-				max-width: 18ch;
+				max-width: 25ch;
 				letter-spacing: -0.03em;
 				font-weight: 800;
 			}
@@ -247,6 +247,23 @@
 			.person h3 {
 				margin: 0 0 0.5rem;
 				font-size: 1.2rem;
+				display: flex;
+				align-items: center;
+				gap: 0.35rem;
+			}
+
+			.person h3 a.ext-link {
+				display: inline-flex;
+				align-items: center;
+				color: var(--muted);
+				opacity: 0.5;
+				transition: opacity 0.15s ease, color 0.15s ease;
+				flex-shrink: 0;
+			}
+
+			.person h3 a.ext-link:hover {
+				opacity: 1;
+				color: var(--brand);
 			}
 
 			.person p {
@@ -437,11 +454,12 @@
 			<div class="container hero-grid">
 				<section class="hero-main">
 					<p class="kicker">Mission</p>
-					<h1>Modeling Thought Through Shape</h1>
+					<h1>Modeling Spatial Intelligence Through Shape</h1>
 					<p class="lead">
-						Thinking Shapes Lab explores how geometric structures become cognitive structures.
-						Our work connects computational design, machine intelligence, and visual reasoning
-						to build systems that understand and generate meaningful form.
+						Thinking Shapes Lab explores how three-dimensional scenes become intelligent abstractions.
+						Our work connects computer vision, machine intelligence, and generative modeling
+						to build systems that perceive, abstract, and recreate the physical world —
+						distilling the complexity of space into compact, meaningful representations.
 					</p>
 					<div class="cta-row">
 						<a class="btn primary" href="#publications">Selected Publications</a>
@@ -508,24 +526,24 @@
 				<h2>People</h2>
 				<div class="grid-2">
 					<article class="person">
-						<p class="role">Assistant Professor</p>
-						<h3><a href="https://francisengelmann.github.io/" target="_blank" rel="noopener noreferrer">Francis Engelmann</a></h3>
+						<p class="role">Assistant Professor · Principal Investigator</p>
+						<h3>Francis Engelmann<a class="ext-link" href="https://francisengelmann.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Francis Engelmann's website"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></h3>
 					</article>
 					<article class="person">
 						<p class="role">PhD Student</p>
-						<h3><a href="https://nihermann.github.io/" target="_blank" rel="noopener noreferrer">Nicolai Hermann</a></h3>
+						<h3>Nicolai Hermann<a class="ext-link" href="https://nihermann.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Nicolai Hermann's website"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></h3>
 					</article>
 					<article class="person">
 						<p class="role">Academic Guest</p>
-						<h3><a href="https://scholar.google.co.jp/citations?user=LaioU1YAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Filippo Ziliotto</a></h3>
+						<h3>Filippo Ziliotto<a class="ext-link" href="https://scholar.google.co.jp/citations?user=LaioU1YAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Filippo Ziliotto's profile"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></h3>
 					</article>
 					<article class="person">
 						<p class="role">Collaborator • PhD Student at ETH</p>
-						<h3><a href="https://elisabettafedele.github.io/" target="_blank" rel="noopener noreferrer">Elisabetta Fedele</a></h3>
+						<h3>Elisabetta Fedele<a class="ext-link" href="https://elisabettafedele.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Elisabetta Fedele's website"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></h3>
 					</article>
 					<article class="person">
 						<p class="role">Collaborator • PhD Student at ETH</p>
-						<h3><a href="https://alexdelitzas.github.io/" target="_blank" rel="noopener noreferrer">Alexandros Delitzas</a></h3>
+						<h3>Alexandros Delitzas<a class="ext-link" href="https://alexdelitzas.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Alexandros Delitzas's website"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></h3>
 					</article>
 				</div>
 			</section>
