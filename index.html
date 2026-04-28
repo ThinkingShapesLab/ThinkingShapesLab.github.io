@@ -104,6 +104,24 @@
 				color: var(--brand);
 			}
 
+			.menu-toggle {
+				display: none;
+				border: 1px solid var(--line);
+				background: var(--paper);
+				color: var(--ink);
+				font-size: 1.15rem;
+				line-height: 1;
+				border-radius: 3px;
+				padding: 0.35rem 0.5rem;
+				cursor: pointer;
+			}
+
+			.menu-toggle:hover,
+			.menu-toggle:focus-visible {
+				border-color: var(--brand);
+				color: var(--brand);
+			}
+
 			.hero {
 				padding: 3.5rem 0 2rem;
 			}
@@ -399,8 +417,15 @@
 
 				.topband-inner {
 					padding: 0.6rem 0;
-					align-items: flex-start;
+					align-items: stretch;
 					flex-direction: column;
+				}
+
+				.topband-head {
+					display: flex;
+					justify-content: space-between;
+					align-items: flex-start;
+					gap: 0.8rem;
 				}
 
 				.mark {
@@ -421,6 +446,20 @@
 					width: 100%;
 					justify-content: flex-start;
 					gap: 0.55rem 0.9rem;
+				}
+
+				.topband:not(.menu-open) nav {
+					display: none;
+				}
+
+				.topband.menu-open nav {
+					display: flex;
+				}
+
+				.menu-toggle {
+					display: inline-flex;
+					align-items: center;
+					justify-content: center;
 				}
 
 				nav a {
@@ -467,11 +506,14 @@
 	<body>
 		<div class="topband">
 			<div class="container topband-inner">
-				<div class="mark">
-					<a href="https://thinkingshapeslab.org" style="text-decoration: none; color: inherit;"><span class="lab">Thinking Shapes Lab</span></a>
-								<span class="uni">Università della Svizzera italiana (USI)</span>
+				<div class="topband-head">
+					<div class="mark">
+						<a href="https://thinkingshapeslab.org" style="text-decoration: none; color: inherit;"><span class="lab">Thinking Shapes Lab</span></a>
+						<span class="uni">Università della Svizzera italiana (USI)</span>
+					</div>
+					<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">&#9776;</button>
 				</div>
-				<nav aria-label="Primary">
+				<nav id="primary-nav" aria-label="Primary">
 					<a href="#research">Research</a>
 					<a href="#publications">Publications</a>
 					<a href="#people">People</a>
@@ -617,7 +659,8 @@
 							</script><br />
 							Faculty of Informatics<br />
 							Università della Svizzera italiana (USI)<br />
-							Lugano, Switzerland
+							Via la Santa 1<br />
+							6962 Viganello, Switzerland
 						</p>
 						<p style="margin-top: 0.8rem;">
 							<a href="https://www.thinkingshapeslab.org">www.thinkingshapeslab.org</a>
@@ -643,5 +686,19 @@
 				Thinking Shapes Lab (TSL) - 2026
 			</footer>
 		</main>
+		<script>
+			(function() {
+				var topband = document.querySelector('.topband');
+				var button = document.querySelector('.menu-toggle');
+				if (!topband || !button) {
+					return;
+				}
+
+				button.addEventListener('click', function() {
+					var isOpen = topband.classList.toggle('menu-open');
+					button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+				});
+			})();
+		</script>
 	</body>
 </html>
