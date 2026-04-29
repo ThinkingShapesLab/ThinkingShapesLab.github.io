@@ -504,32 +504,24 @@
 		</style>
 	</head>
 	<body>
-
-		<nav id="navbar">
-			<div class="container nav-container">
-				<a href="https://thinkingshapeslab.org" class="logo">Thinking Shapes Lab</a>
-				<span class="uni">Università della Svizzera italiana (USI)</span>
-				<ul class="nav-links">
-					<li><a href="#research">Research</a></li>
-					<li><a href="#publications">Publications</a></li>
-					<li><a href="#people">People</a></li>
-					<li><a href="#teaching">Teaching</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>
-				<button id="hamburger-menu" class="hamburger-menu" aria-label="Open menu">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-				<div id="mobile-menu" class="mobile-menu">
+		<div class="topband">
+			<div class="container topband-inner">
+				<div class="topband-head">
+					<div class="mark">
+						<a href="https://thinkingshapeslab.org" style="text-decoration: none; color: inherit;"><span class="lab">Thinking Shapes Lab</span></a>
+						<span class="uni">Università della Svizzera italiana (USI)</span>
+					</div>
+					<button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation">&#9776;</button>
+				</div>
+				<nav id="primary-nav" aria-label="Primary">
 					<a href="#research">Research</a>
 					<a href="#publications">Publications</a>
 					<a href="#people">People</a>
 					<a href="#teaching">Teaching</a>
 					<a href="#contact">Contact</a>
-				</div>
+				</nav>
 			</div>
-		</nav>
+		</div>
 
 		<header class="hero" id="about">
 			<div class="container hero-grid">
@@ -559,131 +551,117 @@
 						<p>Class-agnostic and open-vocabulary segmentation of point clouds and 3D scenes at scale.</p>
 					</article>
 					<article class="research-tile">
-						<style>
-							:root {
-								--bg: #f0f0f0;
-								--paper: #fff;
-								--ink: #111;
-								--muted: #555;
-								--line: #d8d8d8;
-								--brand: #14427a;
-								--max: 1180px;
-							}
-							* { box-sizing: border-box; }
-							html, body { margin: 0; padding: 0; }
-							body {
-								font-family: "Inter", system-ui, sans-serif;
-								color: var(--ink);
-								background: var(--bg);
-								line-height: 1.55;
-							}
-							a { color: inherit; text-decoration: none; }
-							.container { max-width: var(--max); margin: 0 auto; padding: 0 1.4rem; }
-							.nav-container {
-								display: flex;
-								align-items: center;
-								justify-content: space-between;
-								min-height: 60px;
-								position: relative;
-								gap: 1.2rem;
-							}
-							.logo {
-								font-family: "Inter", system-ui, sans-serif;
-								font-size: 1.15rem;
-								font-weight: 800;
-								letter-spacing: -0.02em;
-								color: var(--brand);
-								margin-right: 1.2rem;
-							}
-							.uni {
-								font-size: 0.74rem;
-								text-transform: uppercase;
-								letter-spacing: 0.09em;
-								color: var(--muted);
-								margin-right: auto;
-							}
-							.nav-links {
-								display: flex;
-								gap: 1.1rem;
-								list-style: none;
-								margin: 0;
-								padding: 0;
-							}
-							.nav-links li a {
-								color: var(--muted);
-								font-size: 0.9rem;
-								transition: color 0.15s ease;
-								padding: 0.2rem 0.1rem;
-							}
-							.nav-links li a:hover,
-							.nav-links li a:focus-visible {
-								color: var(--brand);
-							}
-							.hamburger-menu {
-								display: none;
-								flex-direction: column;
-								justify-content: center;
-								align-items: center;
-								width: 36px;
-								height: 36px;
-								background: none;
-								border: none;
-								cursor: pointer;
-								padding: 0;
-								margin-left: 1.2rem;
-								z-index: 1002;
-							}
-							.hamburger-menu span {
-								display: block;
-								width: 24px;
-								height: 3px;
-								background: var(--ink);
-								margin: 4px 0;
-								border-radius: 2px;
-								transition: 0.3s;
-							}
-							.mobile-menu {
-								display: none;
-								flex-direction: column;
-								position: absolute;
-								top: 60px;
-								right: 0;
-								left: 0;
-								background: var(--paper);
-								border-bottom: 1px solid var(--line);
-								box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-								z-index: 1001;
-								padding: 1.2rem 0 1.2rem 0;
-								gap: 0.7rem;
-								animation: slideDown 0.25s ease;
-							}
-							.mobile-menu a {
-								color: var(--muted);
-								font-size: 1.1rem;
-								padding: 0.5rem 1.4rem;
-								transition: color 0.15s;
-							}
-							.mobile-menu a:hover,
-							.mobile-menu a:focus-visible {
-								color: var(--brand);
-							}
-							@keyframes slideDown {
-								from { opacity: 0; transform: translateY(-10px); }
-								to { opacity: 1; transform: translateY(0); }
-							}
-							@media (max-width: 900px) {
-								.nav-links { display: none; }
-								.hamburger-menu { display: flex; }
-								.mobile-menu { display: flex; }
-								.mobile-menu.hide { display: none !important; }
-							}
-							@media (max-width: 680px) {
-								.container { padding: 0 0.95rem; }
-								.logo { font-size: 1rem; }
-								.uni { font-size: 0.68rem; }
-								.mobile-menu a { font-size: 1rem; }
-							}
-						</style>
+						<h3>Superquadric Scene Decomposition</h3>
+						<p>Compact, interpretable 3D scene representations using superquadric geometric primitives.</p>
+					</article>
+					<article class="research-tile">
+						<h3>Functional 3D Understanding</h3>
+						<p>Affordance and functionality reasoning in indoor environments for robotic interaction.</p>
+					</article>
+				</div>
+
+			</section>
+
+			<section class="section" id="publications">
+				<h2>Selected Publications</h2>
+				<div class="pub-grid">
+					<article class="pub">
+						<strong><a href="https://functionalscenes.github.io/" target="_blank" rel="noopener noreferrer">FunRec: Reconstructing Functional 3D Scenes from Egocentric Interaction Videos</a></strong>
+						<p>Delitzas, Zhang, Gavryushin, Di Mario, Sun, Dabral, Guibas, Theobalt, Pollefeys, Engelmann, Baráth — <em>CVPR 2026</em></p>
+					</article>
+					<article class="pub">
+						<strong><a href="https://spacecontrol3d.github.io/" target="_blank" rel="noopener noreferrer">SpaceControl: Introducing Test-Time Spatial Control to 3D Generative Modeling</a></strong>
+						<p>Fedele*, Engelmann*, Huang, Litany, Pollefeys, Guibas — <em>ICLR 2026</em></p>
+					</article>
+					<article class="pub">
+						<strong><a href="https://super-dec.github.io/" target="_blank" rel="noopener noreferrer">SuperDec: 3D Scene Decomposition with Superquadric Primitives</a></strong>
+						<p>Fedele, Sun, Guibas, Pollefeys, Engelmann — <em>ICCV 2025</em> &nbsp;<strong>Oral</strong> (top 2.3%)</p>
+					</article>
+					<article class="pub">
+						<strong><a href="https://openfungraph.github.io/" target="_blank" rel="noopener noreferrer">OpenFunGraph: Open-Vocabulary Functional 3D Scene Graphs</a></strong>
+						<p>Zhang*, Delitzas*, Wang, Zhang, Ji, Pollefeys, Engelmann — <em>CVPR 2025</em> &nbsp;<strong>Highlight</strong> (top 13%)</p>
+					</article>
+					<article class="pub">
+						<strong><a href="https://scenefun3d.github.io/" target="_blank" rel="noopener noreferrer">SceneFun3D: Fine-Grained Functionality and Affordance Understanding in 3D Scenes</a></strong>
+						<p>Delitzas, Takmaz, Tombari, Sumner, Pollefeys, Engelmann — <em>CVPR 2024</em> &nbsp;<strong>Oral</strong> (top 3.3%)</p>
+					</article>
+					<article class="pub">
+						<strong><a href="https://openmask3d.github.io/" target="_blank" rel="noopener noreferrer">OpenMask3D: Open-Vocabulary 3D Instance Segmentation</a></strong>
+						<p>Takmaz, Fedele, Sumner, Pollefeys, Tombari, Engelmann — <em>NeurIPS 2023</em></p>
+					</article>
+					<article class="pub">
+						<strong><a href="https://jonasschult.github.io/Mask3D/" target="_blank" rel="noopener noreferrer">Mask3D: Mask Transformer for 3D Semantic Instance Segmentation</a></strong>
+						<p>Schult, Engelmann, Hermans, Litany, Tang, Leibe — <em>ICRA 2023</em> &nbsp;<strong>1st Place</strong> ScanNet Challenge</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="section" id="people">
+				<h2>People</h2>
+				<div class="grid-2">
+					<article class="person">
+						<p class="role">Assistant Professor · Principal Investigator</p>
+						<h3>Francis Engelmann<a class="ext-link" href="https://francisengelmann.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Francis Engelmann's website"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></h3>
+					</article>
+					<article class="person">
+						<p class="role">PhD Student</p>
+						<h3>Nicolai Hermann<a class="ext-link" href="https://nihermann.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Nicolai Hermann's website"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></h3>
+					</article>
+					<article class="person">
+						<p class="role">Academic Guest</p>
+						<h3>Filippo Ziliotto<a class="ext-link" href="https://scholar.google.co.jp/citations?user=LaioU1YAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Filippo Ziliotto's profile"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></h3>
+					</article>
+					<article class="person">
+						<p class="role">Collaborator • ETH PhD Student</p>
+						<h3>Elisabetta Fedele<a class="ext-link" href="https://elisabettafedele.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Elisabetta Fedele's website"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></h3>
+					</article>
+					<article class="person">
+						<p class="role">Collaborator • ETH PhD Student</p>
+						<h3>Alexandros Delitzas<a class="ext-link" href="https://alexdelitzas.github.io/" target="_blank" rel="noopener noreferrer" aria-label="Alexandros Delitzas's website"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></h3>
+					</article>
+				</div>
+			</section>
+
+			<section class="section" id="teaching">
+				<h2>Teaching</h2>
+				<div class="talks-list" aria-label="Teaching courses list">
+					<article class="talk">
+						<time datetime="2026-03-01">Spring 2026</time>
+						<div>
+							<h3>Computer Vision <a class="ext-link" href="https://search.usi.ch/en/courses/35275471/computer-vision-pattern-recognition" target="_blank" rel="noopener noreferrer" aria-label="Computer Vision course page"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a></h3>
+						</div>
+					</article>
+					<article class="talk">
+						<time datetime="2026-09-01">Fall 2026</time>
+						<div>
+							<h3>Generative AI</h3>
+						</div>
+					</article>
+				</div>
+			</section>
+
+
+			<section class="section" id="contact">
+				<h2>Contact</h2>
+				<div class="contact-wrap">
+					<article class="contact-card">
+						<p>
+							<strong>Thinking Shapes Lab</strong><br />
+							Francis Engelmann 
+							(<a id="contact-email" href="#" style="unicode-bidi:bidi-override;direction:ltr;"></a>)
+							<script>
+								(function() {
+									var u = 'francis.engelmann', d = 'usi.ch';
+									var a = document.getElementById('contact-email');
+									a.href = 'mailto:' + u + '@' + d;
+									a.textContent = u + '\u0040' + d;
+								})();
+							</script><br />
+							Faculty of Informatics<br />
+							Università della Svizzera italiana (USI)<br />
+							Via la Santa 1<br />
+							6962 Viganello, Switzerland
+						</p>
 						<p style="margin-top: 0.8rem;">
 							<a href="https://www.thinkingshapeslab.org">www.thinkingshapeslab.org</a>
 						</p>
@@ -712,34 +690,16 @@
 		</main>
 		<script>
 			(function() {
-				var hamburger = document.getElementById('hamburger-menu');
-				var mobileMenu = document.getElementById('mobile-menu');
-				var isOpen = false;
-				function closeMenu() {
-					mobileMenu.classList.add('hide');
-					hamburger.setAttribute('aria-label', 'Open menu');
-					isOpen = false;
+				var topband = document.querySelector('.topband');
+				var button = document.querySelector('.menu-toggle');
+				if (!topband || !button) {
+					return;
 				}
-				function openMenu() {
-					mobileMenu.classList.remove('hide');
-					hamburger.setAttribute('aria-label', 'Close menu');
-					isOpen = true;
-				}
-				hamburger.addEventListener('click', function() {
-					if (isOpen) {
-						closeMenu();
-					} else {
-						openMenu();
-					}
+
+				button.addEventListener('click', function() {
+					var isOpen = topband.classList.toggle('menu-open');
+					button.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 				});
-				// Hide menu on resize if desktop
-				window.addEventListener('resize', function() {
-					if (window.innerWidth > 900) {
-						closeMenu();
-					}
-				});
-				// Hide menu by default
-				closeMenu();
 			})();
 		</script>
 	</body>
