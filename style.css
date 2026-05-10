@@ -143,7 +143,10 @@ nav a:focus-visible {
 .hero-main {
 	border: 1px solid var(--line);
 	border-radius: 3px;
-	background: var(--paper);
+	background: 
+		linear-gradient(90deg, #ffffff 650px, rgba(255, 255, 255, 0) 850px),
+		url('superquads.jpg') no-repeat calc(100% + 150px) center / contain;
+	background-color: var(--paper);
 	padding: 2.2rem;
 }
 
@@ -417,7 +420,7 @@ footer {
 	}
 }
 
-@media (max-width: 680px) {
+@media (max-width: 950px) {
 	.container {
 		padding: 0 0.95rem;
 	}
@@ -433,6 +436,7 @@ footer {
 		justify-content: space-between;
 		align-items: center;
 		min-height: 56px;
+		padding: 0 0.95rem;
 	}
 
 	.mark {
@@ -504,6 +508,7 @@ footer {
 	.person,
 	.research-tile {
 		padding: 1rem;
+		background-image: none;
 	}
 
 	h1 {
