@@ -257,6 +257,25 @@ main {
 
 .person {
 	padding: 1.1rem;
+	display: grid;
+	grid-template-columns: 72px 1fr;
+	gap: 0.9rem;
+	align-items: center;
+}
+
+.person-photo {
+	width: 72px;
+	height: 72px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 1px solid var(--line);
+	margin: 0;
+	display: block;
+	background: #e6e6e6;
+}
+
+.person-meta {
+	min-width: 0;
 }
 
 .person .role {
@@ -358,12 +377,47 @@ main {
 
 .pub {
 	padding: 0.75rem 0.9rem;
+	display: grid;
+	grid-template-columns: 180px 1fr;
+	gap: 0.9rem;
+	align-items: center;
+}
+
+.pub-teaser-link {
+	display: block;
+	line-height: 0;
+}
+
+.pub-teaser {
+	width: 100%;
+	height: 102px;
+	object-fit: cover;
+	border: 1px solid var(--line);
+	border-radius: 2px;
+}
+
+.pub-content strong {
+	display: block;
 }
 
 .pub p {
 	margin: 0.15rem 0 0;
 	color: var(--muted);
 	font-size: 0.88rem;
+}
+
+.pub p b {
+	display: inline-block;
+	padding: 0.12rem 0.42rem;
+	margin-right: 0.24rem;
+	border: 1px solid rgba(20, 66, 122, 0.28);
+	border-radius: 999px;
+	background: rgba(20, 66, 122, 0.08);
+	color: var(--brand);
+	font-weight: 700;
+	font-size: 0.78rem;
+	letter-spacing: 0.02em;
+	vertical-align: baseline;
 }
 
 .contact-wrap {
@@ -511,6 +565,26 @@ footer {
 		background-image: none;
 	}
 
+	.person-photo {
+		width: 64px;
+		height: 64px;
+	}
+
+	.person {
+		grid-template-columns: 64px 1fr;
+		gap: 0.75rem;
+	}
+
+	.pub {
+		grid-template-columns: 1fr;
+		align-items: start;
+	}
+
+	.pub-teaser {
+		height: auto;
+		aspect-ratio: 16 / 9;
+	}
+
 	h1 {
 		font-size: clamp(1.55rem, 9vw, 2.1rem);
 	}
@@ -527,5 +601,14 @@ footer {
 
 	.talk time {
 		padding-top: 0.2rem;
+	}
+
+	.person {
+		grid-template-columns: 1fr;
+		align-items: start;
+	}
+
+	.person-photo {
+		margin-bottom: 0.15rem;
 	}
 }
